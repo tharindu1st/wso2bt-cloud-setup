@@ -8,11 +8,11 @@ RUN cd wso2/ && \
         unzip wso2am-1.10.0.zip
 
 COPY artifacts/mysql-connector-java-5.1.34-bin.jar /wso2/wso2am-1.10.0/repository/components/lib/
-COPY apim/api-manager.xml /wso2/wso2am-1.10.0/repository/conf/
-COPY apim/master-datasources.xml /wso2/wso2am-1.10.0/repository/conf/datasources/
-COPY apim/registry.xml /wso2/wso2am-1.10.0/repository/conf/
-COPY apim/user-mgt.xml /wso2/wso2am-1.10.0/repository/conf/
-COPY apim/axis2.xml /wso2/wso2am-1.10.0/repository/conf/axis2/
+COPY apim/carbon/repository/conf/api-manager.xml /wso2/wso2am-1.10.0/repository/conf/
+COPY apim/carbon/repository/conf/datasources/master-datasources.xml /wso2/wso2am-1.10.0/repository/conf/datasources/
+COPY apim/carbon/repository/conf/registry.xml /wso2/wso2am-1.10.0/repository/conf/
+COPY apim/carbon/repository/conf/user-mgt.xml /wso2/wso2am-1.10.0/repository/conf/
+COPY apim/carbon/repository/conf/axis2.xml /wso2/wso2am-1.10.0/repository/conf/axis2/
 COPY apim/_AuthorizeAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
 COPY apim/_TokenAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
 COPY apim/_RevokeAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
