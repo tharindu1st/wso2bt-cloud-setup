@@ -9,7 +9,7 @@
     "ssoConfiguration" : {
         "enabled" : "true",
         "issuer" : "API_PUBLISHER",
-        "identityProviderURL" : "https://bt.qsp.identity:9443/samlsso",
+        "identityProviderURL" : "https://bt.qsp.is:9443/samlsso",
         "keyStorePassword" : "",
         "identityAlias" : "",
         "responseSigningEnabled":"true",
