@@ -16,6 +16,11 @@ COPY apim/carbon/repository/conf/axis2/axis2.xml /wso2/wso2am-1.10.0/repository/
 COPY apim/carbon/repository/conf/carbon.xml /wso2/wso2am-1.10.0/repository/conf/
 COPY apim/carbon/repository/conf/log4j.properties /wso2/wso2am-1.10.0/repository/conf/
 
+COPY apim/carbon/repository/conf/deployment/server/jaggeryapps/publisher/site/conf/site.json /wso2/wso2am-1.10.0/repository/conf/deployment/server/jaggeryapps/publisher/site/conf/
+COPY apim/carbon/repository/conf/deployment/server/jaggeryapps/store/site/conf/site.json /wso2/wso2am-1.10.0/repository/conf/deployment/server/jaggeryapps/store/site/conf/
+
+COPY apim/carbon/repository/conf/security/authenticators.xml /wso2/wso2am-1.10.0/repository/conf/security/
+
 
 COPY apim/_AuthorizeAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
 COPY apim/_TokenAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
