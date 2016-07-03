@@ -12,7 +12,9 @@ COPY apim/carbon/repository/conf/api-manager.xml /wso2/wso2am-1.10.0/repository/
 COPY apim/carbon/repository/conf/datasources/master-datasources.xml /wso2/wso2am-1.10.0/repository/conf/datasources/
 COPY apim/carbon/repository/conf/registry.xml /wso2/wso2am-1.10.0/repository/conf/
 COPY apim/carbon/repository/conf/user-mgt.xml /wso2/wso2am-1.10.0/repository/conf/
-COPY apim/carbon/repository/conf/axis2.xml /wso2/wso2am-1.10.0/repository/conf/axis2/
+COPY apim/carbon/repository/conf/user-mgt.xml /wso2/wso2am-1.10.0/repository/conf/
+COPY apim/carbon/repository/conf/carbon.xml /wso2/wso2am-1.10.0/repository/conf/
+
 COPY apim/_AuthorizeAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
 COPY apim/_TokenAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
 COPY apim/_RevokeAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/

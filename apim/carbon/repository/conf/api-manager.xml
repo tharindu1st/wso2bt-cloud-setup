@@ -165,7 +165,7 @@
 			<!--
             			Endpoint URLs for the APIs hosted in this API gateway.
         		-->
-                        <GatewayEndpoint>http://${carbon.local.ip}:${http.nio.port},https://${carbon.local.ip}:${https.nio.port}</GatewayEndpoint>
+                        <GatewayEndpoint>http://${carbon.local.ip}:8283,https://${carbon.local.ip}:8246</GatewayEndpoint>
                 </Environment>
         </Environments>
 

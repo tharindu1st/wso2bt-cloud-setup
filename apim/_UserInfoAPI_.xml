@@ -1,24 +1,18 @@
-<api xmlns="http://ws.apache.org/ns/synapse" name="_WSO2AMUserInfoAPI_" context="/userinfo">
-    <resource methods="GET" url-mapping="/*" faultSequence="_token_fault_">
-        <inSequence>
-            <property name="uri.var.portnum" expression="get-property('keyManager.port')"/>
-	    <property name="uri.var.hostname" expression="get-property('keyManager.hostname')"/>
-            <send>
-                <endpoint>
-                    <http uri-template="https://apim:{uri.var.portnum}/oauth2/userinfo">
-                        <timeout>
-                            <duration>60000</duration>
-                            <responseAction>fault</responseAction>
-                        </timeout>
-                    </http>
-                </endpoint>
-            </send>
-        </inSequence>
-        <outSequence>
-            <send/>
-        </outSequence>
-    </resource>
-    <handlers>
-        <handler class="org.wso2.carbon.apimgt.gateway.handlers.common.SynapsePropertiesHandler"/>
-    </handlers>
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/userinfo" name="_WSO2AMUserInfoAPI_" xmlns="http://ws.apache.org/ns/synapse">
+  <resource faultSequence="_token_fault_" methods="GET" protocol="http" url-mapping="/*">
+    <inSequence>
+      <property expression="get-property('keyManager.port')"
+        name="uri.var.portnum" scope="default" type="STRING"/>
+      <property expression="get-property('keyManager.hostname')"
+        name="uri.var.hostname" scope="default" type="STRING"/>
+      <send/>
+    </inSequence>
+    <outSequence>
+      <send/>
+    </outSequence>
+  </resource>
+  <handlers>
+    <handler class="org.wso2.carbon.apimgt.gateway.handlers.common.SynapsePropertiesHandler"/>
+  </handlers>
 </api>
