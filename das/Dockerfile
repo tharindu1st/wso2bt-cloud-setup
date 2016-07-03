@@ -11,7 +11,7 @@ COPY artifacts/mysql-connector-java-5.1.34-bin.jar /wso2/wso2das-3.0.1/repositor
 COPY das/carbon/repository/conf/datasources/analytics-datasources.xml  /wso2/wso2das-3.0.1/repository/conf/datasources/
 COPY das/carbon/repository/conf/datasources/master-datasources.xml  /wso2/wso2das-3.0.1/repository/conf/datasources/
 COPY das/carbon/repository/conf/user-mgt.xml  /wso2/wso2das-3.0.1/repository/conf/
-COPY esb/carbon/repository/conf/security/authenticators.xml /wso2/wso2das-3.0.1/repository/conf/security/authenticators.xml
+COPY das/carbon/repository/conf/security/authenticators.xml /wso2/wso2das-3.0.1/repository/conf/security/authenticators.xml
 
 
 COPY das/API_Manager_Analytics_REST.car /wso2/wso2das-3.0.1/repository/deployment/server/carbonapps/
