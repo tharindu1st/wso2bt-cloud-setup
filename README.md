@@ -10,10 +10,11 @@ Following instructions will help you to setup the deployment
 
 e.g
 
-* 192.168.59.101 bt.qsp.esb
-* 192.168.59.101 bt.qsp.is
-* 192.168.59.101 bt.qsp.apim
-* 192.168.59.101 bt.qsp.das
+* 75.124.74.161 bt.qsp.esb
+* 75.124.74.161 bt.qsp.is
+* 75.124.74.161 bt.qsp.apim
+* 75.124.74.161 bt.qsp.das
+* 75.124.74.161 bt.qsp.mb
 
 SSO registration at IS
 https://bt.qsp.esb:9444/carbon/admin/logout_action.jsp?logoutcomplete=true
