@@ -14,6 +14,8 @@ services:
     container_name: wso2-is
     depends_on: 
       - dbms
+    entrypoint: artifacts/healthcheck.sh dbms 3306
+
     build:
       context: .
       dockerfile: identity/Dockerfile
@@ -28,6 +30,9 @@ services:
     depends_on: 
       - dbms
       - identity
+    entrypoint: artifacts/healthcheck.sh rdbms 3306
+    entrypoint: artifacts/healthcheck.sh wso2-is 10389
+
     build:
       context: .
       dockerfile: esb/Dockerfile
@@ -53,7 +58,12 @@ services:
     container_name: apim
     depends_on: 
       - dbms
+      - identity
       - das
+    entrypoint: artifacts/healthcheck.sh rdbms 3306
+    entrypoint: artifacts/healthcheck.sh wso2-is 10389
+    entrypoint: artifacts/healthcheck.sh apim_das 7611
+
     build:
       context: .
       dockerfile: apim/Dockerfile
@@ -68,6 +78,10 @@ services:
     container_name: mb
     depends_on: 
       - dbms
+      - identity
+    entrypoint: artifacts/healthcheck.sh rdbms 3306
+    entrypoint: artifacts/healthcheck.sh wso2-is 10389
+
     build:
       context: .
       dockerfile: mb/Dockerfile
