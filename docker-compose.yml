@@ -14,8 +14,6 @@ services:
     container_name: wso2-is
     depends_on: 
       - dbms
-    entrypoint: ./wait-for-it.sh dbms:3306
-
     build:
       context: .
       dockerfile: identity/Dockerfile
@@ -30,9 +28,6 @@ services:
     depends_on: 
       - dbms
       - identity
-    entrypoint: ./wait-for-it.sh rdbms:3306
-    entrypoint: ./wait-for-it.sh wso2-is:10389
-
     build:
       context: .
       dockerfile: esb/Dockerfile
@@ -60,10 +55,6 @@ services:
       - dbms
       - identity
       - das
-    entrypoint: ./wait-for-it.sh rdbms:3306
-    entrypoint: ./wait-for-it.sh wso2-is:10389
-    entrypoint: ./wait-for-it.sh apim_das:7611
-
     build:
       context: .
       dockerfile: apim/Dockerfile
@@ -79,16 +70,12 @@ services:
     depends_on: 
       - dbms
       - identity
-    entrypoint: ./wait-for-it.sh rdbms:3306
-    entrypoint: ./wait-for-it.sh wso2-is:10389
-
     build:
       context: .
       dockerfile: mb/Dockerfile
     ports:
       - "9767:9763"
       - "9447:9443"
-      
     environment:
       - SLEEP=200 
  
