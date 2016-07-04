@@ -153,7 +153,7 @@
 			<!--
             			Server URL of the API gateway.
         		-->
-                        <ServerURL>https://${carbon.local.ip}:${mgt.transport.https.port}${carbon.context}/services/</ServerURL>
+                        <ServerURL>https://apim:${mgt.transport.https.port}${carbon.context}/services/</ServerURL>
 			<!--
             			Admin username for the API gateway.
         		-->
@@ -165,7 +165,7 @@
 			<!--
             			Endpoint URLs for the APIs hosted in this API gateway.
         		-->
-                        <GatewayEndpoint>http://${carbon.local.ip}:8283,https://${carbon.local.ip}:8246</GatewayEndpoint>
+                        <GatewayEndpoint>http://apim:8283,https://apim:8246</GatewayEndpoint>
                 </Environment>
         </Environments>
 
