@@ -70,7 +70,7 @@ services:
       - dbms
     build:
       context: .
-      dockerfile: apim/Dockerfile
+      dockerfile: mb/Dockerfile
     ports:
       - "9767:9763"
       - "9447:9443"
