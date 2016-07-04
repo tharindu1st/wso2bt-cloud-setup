@@ -20,6 +20,9 @@ https://bt.qsp.esb:9444/carbon/admin/logout_action.jsp?logoutcomplete=true
 
 IS port offset 0  9443
 ESB port offset 1  9444
+DAS port offset 2  9445
+APIM port offset 3  9446
+MB port offset 4  9447
 
 This will setup 
 
