@@ -64,7 +64,7 @@ services:
       - "8246:8243"
     environment:
       - SLEEP=200 
- mb:
+  mb:
     container_name: mb
     depends_on: 
       - dbms
