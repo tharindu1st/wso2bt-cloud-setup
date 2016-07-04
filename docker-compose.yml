@@ -21,7 +21,7 @@ services:
       - "9763:9763"
       - "9443:9443"  
     environment:
-      - SLEEP=360
+      - SLEEP=1200
       
   esb:
     container_name: esb
@@ -35,12 +35,15 @@ services:
       - "9764:9763"
       - "9444:9443"
       - "8281:8280"
-      - "8244:8243" 
+      - "8244:8243"
+    environment:
+      - SLEEP=1600 
         
   das:
     container_name: apim_das
     depends_on: 
       - dbms
+      - identity
     build:
       context: .
       dockerfile: das/Dockerfile
@@ -48,7 +51,7 @@ services:
       - "9765:9763"
       - "9445:9443"
     environment:
-      - SLEEP=200 
+      - SLEEP=1600
   apim:
     container_name: apim
     depends_on: 
@@ -64,7 +67,7 @@ services:
       - "8283:8280"
       - "8246:8243"
     environment:
-      - SLEEP=200 
+      - SLEEP=2100
   mb:
     container_name: mb
     depends_on: 
@@ -77,7 +80,7 @@ services:
       - "9767:9763"
       - "9447:9443"
     environment:
-      - SLEEP=200 
+      - SLEEP=1600 
  
 
   

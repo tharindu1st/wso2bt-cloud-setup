@@ -15,7 +15,7 @@
     </dbConfig>
 
     <dbConfig name="govregistry">
-      <dataSource>jdbc/WSO2REG_DB</dataSource>
+      <dataSource>jdbc/WSO2RegDB</dataSource>
     </dbConfig>
 
     <!-- This handler provides the feature to add a simlink to a given resource -->
@@ -195,11 +195,6 @@
     </handler>
 
     <!--This handler clears the caches when workflow-extension config is updated.-->
-   <handler class="org.wso2.carbon.apimgt.impl.handlers.APIConfigMediaTypeHandler" methods="PUT,DELETE">
-      <filter class="org.wso2.carbon.registry.core.jdbc.handlers.filters.MediaTypeMatcher">
-        <property name="mediaType">workflow-config</property>
-    </filter>
-   </handler>
 
    <remoteInstance url="https://gateway.apim-wso2.com"> 
        <id>gov</id>
@@ -253,43 +248,7 @@
     </mount-->
 
     <!-- This defines index configuration which is used in meta data search feature of the registry -->
-    <indexingConfiguration>
-        <startingDelayInSeconds>60</startingDelayInSeconds>
-        <indexingFrequencyInSeconds>3</indexingFrequencyInSeconds>
-        <!--number of resources submit for given indexing thread -->
-        <batchSize>50</batchSize>
-        <!--number of worker threads for indexing -->
-        <indexerPoolSize>10</indexerPoolSize>
-        <!-- location storing the time the indexing took place-->
-        <lastAccessTimeLocation>/_system/local/repository/components/org.wso2.carbon.registry/indexing/lastaccesstime</lastAccessTimeLocation>
-        <!-- the indexers that implement the indexer interface for a relevant media type/(s) -->
-        <indexers>
-            <!--indexer class="org.wso2.carbon.registry.indexing.indexer.MSExcelIndexer" mediaTypeRegEx="application/vnd.ms-excel"/>
-            <indexer class="org.wso2.carbon.registry.indexing.indexer.MSPowerpointIndexer" mediaTypeRegEx="application/vnd.ms-powerpoint"/>
-            <indexer class="org.wso2.carbon.registry.indexing.indexer.MSWordIndexer" mediaTypeRegEx="application/msword"/>
-            <indexer class="org.wso2.carbon.registry.indexing.indexer.PDFIndexer" mediaTypeRegEx="application/pdf"/>
-            <indexer class="org.wso2.carbon.registry.indexing.indexer.XMLIndexer" mediaTypeRegEx="application/xml"/-->
-            <!--indexer class="org.wso2.carbon.governance.registry.extensions.indexers.RXTIndexer" mediaTypeRegEx="application/wsdl\+xml" profiles ="default,api-store,api-publisher"/>
-            <indexer class="org.wso2.carbon.governance.registry.extensions.indexers.RXTIndexer" mediaTypeRegEx="application/x-xsd\+xml " profiles ="default,api-store,api-publisher"/>
-            <indexer class="org.wso2.carbon.governance.registry.extensions.indexers.RXTIndexer" mediaTypeRegEx="application/policy\+xml" profiles ="default,api-store,api-publisher"/-->
-            <indexer class="org.wso2.carbon.governance.registry.extensions.indexers.RXTIndexer" mediaTypeRegEx="application/vnd.(.)+\+xml" profiles ="default,api-store,api-publisher"/>
-            <!--indexer class="org.wso2.carbon.registry.indexing.indexer.XMLIndexer" mediaTypeRegEx="application/(.)+\+xml"/>
-            <indexer class="org.wso2.carbon.registry.indexing.indexer.PlainTextIndexer" mediaTypeRegEx="text/(.)+"/>
-            <indexer class="org.wso2.carbon.registry.indexing.indexer.PlainTextIndexer" mediaTypeRegEx="application/x-javascript"/-->
-	    <indexer class="org.wso2.carbon.apimgt.impl.indexing.indexer.PlainTextIndexer" mediaTypeRegEx="text/plain+" profiles ="default,api-store,api-publisher"/>
-	    <indexer class="org.wso2.carbon.apimgt.impl.indexing.indexer.PDFIndexer" mediaTypeRegEx="application/pdf" profiles ="default,api-store,api-publisher"/>
-	    <indexer class="org.wso2.carbon.apimgt.impl.indexing.indexer.MSWordIndexer" mediaTypeRegEx="application/msword" profiles ="default,api-store,api-publisher"/>
-	    <indexer class="org.wso2.carbon.apimgt.impl.indexing.indexer.MSPowerpointIndexer" mediaTypeRegEx="application/vnd.ms-powerpoint" profiles ="default,api-store,api-publisher"/>
-	    <indexer class="org.wso2.carbon.apimgt.impl.indexing.indexer.MSExcelIndexer" mediaTypeRegEx="application/vnd.ms-excel" profiles ="default,api-store,api-publisher"/>
-	    <indexer class="org.wso2.carbon.apimgt.impl.indexing.indexer.XMLIndexer" mediaTypeRegEx="application/xml" profiles ="default,api-store,api-publisher"/>
-    	    <indexer class="org.wso2.carbon.apimgt.impl.indexing.indexer.WSDLIndexer" mediaTypeRegEx="application/api-wsdl" profiles ="default,api-store,api-publisher"/>
-        </indexers>
-        <exclusions>
-            <exclusion pathRegEx="/_system/config/repository/dashboards/gadgets/swfobject1-5/.*[.]html"/>
-            <exclusion pathRegEx="/_system/local/repository/components/org[.]wso2[.]carbon[.]registry/mount/.*"/>
-        </exclusions>
-    </indexingConfiguration>
-
+   
 
     <!-- This static configuration is suppose to be modified before any data being loaded to the registry (i.e.: before the first startup) -->
     
