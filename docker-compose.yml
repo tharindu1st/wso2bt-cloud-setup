@@ -14,7 +14,7 @@ services:
     container_name: wso2-is
     depends_on: 
       - dbms
-    entrypoint: 'sh artifacts/healthcheck.sh dbms 3306'
+    entrypoint: ./wait-for-it.sh dbms:3306
 
     build:
       context: .
@@ -30,8 +30,8 @@ services:
     depends_on: 
       - dbms
       - identity
-    entrypoint: 'sh artifacts/healthcheck.sh rdbms 3306'
-    entrypoint: 'sh artifacts/healthcheck.sh wso2-is 10389'
+    entrypoint: ./wait-for-it.sh rdbms:3306
+    entrypoint: ./wait-for-it.sh wso2-is:10389
 
     build:
       context: .
@@ -60,9 +60,9 @@ services:
       - dbms
       - identity
       - das
-    entrypoint: 'sh artifacts/healthcheck.sh rdbms 3306'
-    entrypoint: 'sh artifacts/healthcheck.sh wso2-is 10389'
-    entrypoint: 'sh artifacts/healthcheck.sh apim_das 7611'
+    entrypoint: ./wait-for-it.sh rdbms:3306
+    entrypoint: ./wait-for-it.sh wso2-is:10389
+    entrypoint: ./wait-for-it.sh apim_das:7611
 
     build:
       context: .
@@ -79,8 +79,8 @@ services:
     depends_on: 
       - dbms
       - identity
-    entrypoint: 'sh artifacts/healthcheck.sh rdbms 3306'
-    entrypoint: 'sh artifacts/healthcheck.sh wso2-is 10389'
+    entrypoint: ./wait-for-it.sh rdbms:3306
+    entrypoint: ./wait-for-it.sh wso2-is:10389
 
     build:
       context: .
