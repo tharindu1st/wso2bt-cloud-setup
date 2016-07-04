@@ -8,24 +8,7 @@ RUN cd wso2/ && \
         unzip wso2am-1.10.0.zip
 
 COPY artifacts/mysql-connector-java-5.1.34-bin.jar /wso2/wso2am-1.10.0/repository/components/lib/
-COPY apim/carbon/repository/conf/api-manager.xml /wso2/wso2am-1.10.0/repository/conf/
-COPY apim/carbon/repository/conf/datasources/master-datasources.xml /wso2/wso2am-1.10.0/repository/conf/datasources/
-COPY apim/carbon/repository/conf/registry.xml /wso2/wso2am-1.10.0/repository/conf/
-COPY apim/carbon/repository/conf/user-mgt.xml /wso2/wso2am-1.10.0/repository/conf/
-COPY apim/carbon/repository/conf/axis2/axis2.xml /wso2/wso2am-1.10.0/repository/conf/axis2/
-COPY apim/carbon/repository/conf/carbon.xml /wso2/wso2am-1.10.0/repository/conf/
-COPY apim/carbon/repository/conf/log4j.properties /wso2/wso2am-1.10.0/repository/conf/
-
-COPY apim/carbon/repository/conf/deployment/server/jaggeryapps/publisher/site/conf/site.json /wso2/wso2am-1.10.0/repository/deployment/server/jaggeryapps/publisher/site/conf
-COPY apim/carbon/repository/conf/deployment/server/jaggeryapps/store/site/conf/site.json /wso2/wso2am-1.10.0/repository/deployment/server/jaggeryapps/store/site/conf
-
-COPY apim/carbon/repository/conf/security/authenticators.xml /wso2/wso2am-1.10.0/repository/conf/security/
-
-
-COPY apim/_AuthorizeAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
-COPY apim/_TokenAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
-COPY apim/_RevokeAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
-COPY apim/_UserInfoAPI_.xml /wso2/wso2am-1.10.0/repository/deployment/server/synapse-configs/default/api/
+COPY apim/carbon/ /wso2/wso2am-1.10.0/
 
 CMD ["sh", "/wso2/wso2am-1.10.0/bin/wso2server.sh"]
 

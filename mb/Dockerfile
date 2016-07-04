@@ -10,10 +10,7 @@ RUN cd wso2/ && \
 #COPY mb/carbon/ /mnt/wso2/carbon-home/
 
 COPY artifacts/mysql-connector-java-5.1.34-bin.jar /wso2/wso2mb-3.1.0/repository/components/lib/
-COPY mb/carbon/repository/conf/datasources/master-datasources.xml /wso2/wso2mb-3.1.0/repository/conf/datasources/
-COPY mb/carbon/repository/conf/user-mgt.xml /wso2/wso2mb-3.1.0/repository/conf/user-mgt.xml
-COPY mb/carbon/repository/conf/security/authenticators.xml /wso2/wso2mb-3.1.0/repository/conf/security/authenticators.xml
-COPY mb/carbon/repository/conf/carbon.xml /wso2/wso2mb-3.1.0/repository/conf/
+COPY mb/carbon/ /wso2/wso2mb-3.1.0/
 
 
 CMD ["sh", "/wso2/wso2mb-3.1.0/bin/wso2server.sh"]
