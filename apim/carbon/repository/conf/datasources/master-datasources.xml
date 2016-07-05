@@ -57,11 +57,11 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:h2:<!-- Full path to JDBC database -->;AUTO_SERVER=TRUE</url>
-                    <username>wso2carbon</username>
-                    <password>wso2carbon</password>
+                    <url>jdbc:mysql://rdbms:3306/APIM_STATSDB?autoReconnect=true</url>
+                    <username>root</username>
+                    <password>root</password>
                     <defaultAutoCommit>false</defaultAutoCommit>
-                    <driverClassName>org.h2.Driver</driverClassName>
+                    <driverClassName>com.mysql.jdbc.Driver</driverClassName>
                     <maxActive>50</maxActive>
                     <maxWait>60000</maxWait>
                     <testOnBorrow>true</testOnBorrow>
