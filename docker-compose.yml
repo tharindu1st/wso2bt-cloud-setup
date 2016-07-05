@@ -62,10 +62,10 @@ services:
       context: .
       dockerfile: apim/Dockerfile
     ports:
-      - "9766:9763"
-      - "9446:9443"
-      - "8283:8280"
-      - "8246:8243"
+      - "9766:9766"
+      - "9446:9446"
+      - "8283:8283"
+      - "8246:8246"
     environment:
       - SLEEP=2100
   mb:
