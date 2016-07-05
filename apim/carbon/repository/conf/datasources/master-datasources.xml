@@ -57,7 +57,7 @@
             </jndiConfig>
             <definition type="RDBMS">
                 <configuration>
-                    <url>jdbc:mysql://rdbms:3306/APIM_STATSDB?autoReconnect=true</url>
+                    <url>jdbc:mysql://rdbms:3306/APIM_STATSDB?autoReconnect=true&amp;relaxAutoCommit=true</url>
                     <username>root</username>
                     <password>root</password>
                     <defaultAutoCommit>false</defaultAutoCommit>
