@@ -410,8 +410,8 @@
 	<!--This property is used to indicate how we do user name comparision for token generation https://wso2.org/jira/browse/APIMANAGER-2225-->
 	<!--GroupingExtractor>org.wso2.carbon.apimgt.impl.DefaultGroupIDExtractorImpl</GroupingExtractor-->
 	<CompareCaseInsensitively>true</CompareCaseInsensitively>
-        <DisplayURL>false</DisplayURL>
-        <URL>https://${carbon.local.ip}:${mgt.transport.https.port}/store</URL>
+        <DisplayURL>true</DisplayURL>
+        <URL>https://bt.qsp.apim:${mgt.transport.https.port}/store</URL>
 
 	<!--
             Server URL of the API Store.
